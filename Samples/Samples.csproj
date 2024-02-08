@@ -8,8 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Danilvar.RandGen.Options\Danilvar.RandGen.Options.csproj" />
       <ProjectReference Include="..\Danilvar.RandGen\Danilvar.RandGen.fsproj" />
+      <ProjectReference Include="..\DVar.RandCreds\DVar.RandCreds.fsproj" />
     </ItemGroup>
 
 </Project>
