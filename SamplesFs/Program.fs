@@ -14,15 +14,23 @@ let usernameOptions: UsernameOptions =
     PostfixLength = 10 }
 
 let emailOptions: EmailOptions =
-  { Domains = [| "" |]
+  { Domains = [| "naruto" |]
     Prefix = ""
     RandomCharLength = 4 }
 
 let username = RandGen.UsernameDefault
 let password = RandGen.Password passwordOptions
 
-let email = RandGen.Email emailOptions
+let email = RandGen.EmailDefault emailOptions
+
+let email2 = RandGen.EmailDefaultNoOptions
+
+let phoneNumber = RandGen.PhoneNumber Russia
+let phoneNumber2 = RandGen.PhoneNumber Japan
 
 printfn $"Username:  %s{username}"
 printfn $"Password %s{password}"
 printfn $"Email %s{email}"
+printfn $"Email2 %s{email2}"
+printfn $"Phone %s{phoneNumber}"
+printfn $"Phone2 %s{phoneNumber2}"

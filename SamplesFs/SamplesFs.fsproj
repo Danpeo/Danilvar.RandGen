@@ -10,7 +10,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Danilvar.RandGen\Danilvar.RandGen.fsproj" />
       <ProjectReference Include="..\DVar.RandCreds\DVar.RandCreds.fsproj" />
     </ItemGroup>
 
