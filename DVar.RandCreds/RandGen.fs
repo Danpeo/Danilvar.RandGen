@@ -73,6 +73,10 @@ let EmailDefaultNoOptions =
       Prefix = "user"
       RandomCharLength = 6 }
 
+let Numbers (length: int) : string =
+  let randomNumbers = Array.init length (fun _ -> getRandomChar numericChars)
+  new string (randomNumbers)
+
 let PhoneNumber (country: Country) =
   let prefix =
     match country with
@@ -123,4 +127,3 @@ let PhoneNumber (country: Country) =
   let randomNumbers = Array.init numberLength (fun _ -> getRandomChar numericChars)
 
   prefix + new string (randomNumbers)
-

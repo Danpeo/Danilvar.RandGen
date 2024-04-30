@@ -6,6 +6,7 @@
         <Title>Random Credentials Generator</Title>
         <Authors>Daniel Varov</Authors>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <Version>1.1.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
