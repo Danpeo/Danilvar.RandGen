@@ -127,3 +127,7 @@ let PhoneNumber (country: Country) =
   let randomNumbers = Array.init numberLength (fun _ -> getRandomChar numericChars)
 
   prefix + new string (randomNumbers)
+
+let Boolean () =
+  let random = Random()
+  random.Next(0, 2) = 0
