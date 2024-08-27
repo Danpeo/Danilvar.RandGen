@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
+using System.Linq;
 using DVar.RandCreds;
 using DVar.RandCreds.Options;
 using Samples;
@@ -20,9 +22,9 @@ Console.WriteLine($"Username: {username}");
 Console.WriteLine($"Phone Number: {phoneNumber}");
 Console.WriteLine($"Color2: {color2}");
 
-var word = RandWord.word(6);
+var word = RandWord.Word(6);
 Console.WriteLine($"Word: {word}");
-var words = RandWord.words(10, 6).ToList();
+var words = RandWord.Words(10, 6).ToList();
 foreach (var w in words)
 {
     Console.WriteLine($"Word: {w}");

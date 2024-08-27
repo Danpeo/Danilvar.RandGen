@@ -5,30 +5,30 @@ open System
 let private vowels = "aiueo"
 let private consonants = "bcdfghjklmnpqrstvwxyz"
 
-let vow () = RandGen.char (vowels)
-let con () = RandGen.char (consonants)
+let Vow () = RandGen.char (vowels)
+let Con () = RandGen.char (consonants)
 
-let syllable () =
+let Syllable () =
   let random = Random()
 
   match random.Next(4) with
-  | 0 -> $"{vow ()}"
-  | 1 -> $"{con ()}{vow ()}"
-  | 2 -> $"{con ()}{vow ()}{con ()}"
-  | 3 -> $"{vow ()}{con ()}"
+  | 0 -> $"{Vow ()}"
+  | 1 -> $"{Con ()}{Vow ()}"
+  | 2 -> $"{Con ()}{Vow ()}{Con ()}"
+  | 3 -> $"{Vow ()}{Con ()}"
   | _ -> "_"
 
-let word (syllableCount: int) =
-  let syllables = List.init syllableCount (fun _ -> syllable ())
+let Word (syllableCount: int) =
+  let syllables = List.init syllableCount (fun _ -> Syllable ())
   String.concat "" syllables
 
-let words (n: int, maxSyllableCount: int) =
+let Words (n: int, maxSyllableCount: int) =
   let random = Random()
 
   let words =
     List.init n (fun _ ->
       let syllableCount = 1 + random.Next(maxSyllableCount - 1)
-      word syllableCount)
+      Word syllableCount)
 
   words
  
