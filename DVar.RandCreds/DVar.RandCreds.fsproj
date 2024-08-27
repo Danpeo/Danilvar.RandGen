@@ -13,6 +13,7 @@
         <Compile Include="Options.fs" />
         <Compile Include="RandGen.fs" />
         <Compile Include="RandColor.fs" />
+        <Compile Include="RandWord.fs" />
     </ItemGroup>
 
 </Project>

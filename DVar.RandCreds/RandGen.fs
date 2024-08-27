@@ -11,7 +11,7 @@ let private specialChars = "!@#$%^&*()_-+=<>?"
 let private allChars = lowerChars + upperChars + numericChars + specialChars
 let private noSpecialChars = lowerChars + upperChars + numericChars
 
-let private getRandomChar (charSet: string) =
+let char (charSet: string) =
   charSet[RandomNumberGenerator.GetInt32(charSet.Length)]
 
 let private getLength (length: int) (minLength: int) (maxLength: int) : int =
@@ -29,7 +29,7 @@ let Password (options: PasswordOptions) : string =
 
   let length = getLength options.Length 5 100
 
-  let password = Array.init length (fun i -> getRandomChar (getPasswordChar i))
+  let password = Array.init length (fun i -> char (getPasswordChar i))
 
   let shufflePassword (password: char array) =
     let random = Random()
@@ -48,7 +48,7 @@ let PasswordDefault =
 let Username (options: UsernameOptions) : string =
   let postfixLength = getLength options.PostfixLength 5 100
 
-  let genPostfix = Array.init postfixLength (fun _ -> getRandomChar noSpecialChars)
+  let genPostfix = Array.init postfixLength (fun _ -> char noSpecialChars)
 
   options.Prefix + new string (genPostfix)
 
@@ -61,7 +61,7 @@ let Email (options: EmailOptions) (minRandomCharLength: int, maxRandomCharLength
   let postfix =
     options.Domains[RandomNumberGenerator.GetInt32(options.Domains.Length)]
 
-  let genMiddleChars = Array.init charLength (fun _ -> getRandomChar noSpecialChars)
+  let genMiddleChars = Array.init charLength (fun _ -> char noSpecialChars)
 
   options.Prefix + new string (genMiddleChars) + "@" + postfix
 
@@ -74,7 +74,7 @@ let EmailDefaultNoOptions =
       RandomCharLength = 6 }
 
 let Numbers (length: int) : string =
-  let randomNumbers = Array.init length (fun _ -> getRandomChar numericChars)
+  let randomNumbers = Array.init length (fun _ -> char numericChars)
   new string (randomNumbers)
 
 let PhoneNumber (country: Country) =
@@ -124,7 +124,7 @@ let PhoneNumber (country: Country) =
     | Nigeria -> 11
     | Pakistan -> 11
 
-  let randomNumbers = Array.init numberLength (fun _ -> getRandomChar numericChars)
+  let randomNumbers = Array.init numberLength (fun _ -> char numericChars)
 
   prefix + new string (randomNumbers)
 
